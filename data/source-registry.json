@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "policy": "Facts may be indexed from all sources; reference images are embedded only when use is permitted or supplied by the user.",
+  "sources": [
+    {"id":"bcb","tier":"A","name":"Banco Central do Brasil","url":"https://www.bcb.gov.br/cedulasemoedas/moedascomemorativas","use":"official emissions, designs, specifications, mintages"},
+    {"id":"bcb-circulating","tier":"A","name":"BCB - Moedas Comemorativas do Real em Circulação","url":"https://www.bcb.gov.br/cedulasemoedas/moedascirculacaocomemorativas","use":"official technical catalog"},
+    {"id":"museu-valores","tier":"A","name":"Museu de Valores do Banco Central","url":"https://www.bcb.gov.br/acessoinformacao/museudevalores","use":"official collection and imagery when licensing/usage permits"},
+    {"id":"numista","tier":"B","name":"Numista","url":"https://pt.numista.com/catalogue/bresil-21.html","use":"cross-reference types, variants, catalog numbers; do not copy images without license check"},
+    {"id":"crmb","tier":"B","name":"Moedas do Brasil / CRMB","url":"https://www.moedasdobrasil.com.br/moedas/catalogo.asp","use":"cross-reference emissions and catalog identifiers"},
+    {"id":"bentes","tier":"B","name":"Bentes","url":"https://www.bentes.com/coins-catalog","use":"die varieties and catalog cross-reference"},
+    {"id":"catalogo-amigo","tier":"B","name":"Catálogo Moedas do Real: Erros e Variantes","url":"https://www.catalogoamigo.com/produto/catalogo-moedas-do-real-erros-e-variantes/","use":"specialized errors/variants; copyrighted commercial source"},
+    {"id":"ucoin","tier":"C","name":"uCoin","url":"https://pt.ucoin.net/","use":"secondary cross-check and discovery"},
+    {"id":"castro","tier":"C","name":"Numismática Castro","url":"https://www.numismaticacastro.com.br/moedas-nacionais/moedas-com-erros/","use":"discovery of reported errors; verify elsewhere"},
+    {"id":"rocha","tier":"C","name":"Rocha Numismática","url":"https://rochanumismatica.com.br/moedas-nacionais/moedas-com-erros/","use":"discovery of reported errors; verify elsewhere"}
+  ]
+}
