@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "sourcePolicy": "BCB first; catalog entries are identification references, not price claims.",
+  "version": 2,
+  "sourcePolicy": "BCB first; factual metadata may be cross-checked against established catalogs. Embedded visual fingerprints come only from permitted/user-supplied images.",
   "coins": [
     {
       "id": "brl-1-2024-30-anos-real",
@@ -14,110 +14,18 @@
       "weightG": 7,
       "mintage": 45000000,
       "official": true,
-      "signals": {
-        "requiredAny": ["30 ANOS", "1994 2024", "1994-2024"],
-        "supporting": ["REAL", "BRASIL", "R$"],
-        "visual": ["bimetallic", "republic_effigy", "diagonal_lines", "marajoara_ring"]
-      },
+      "visualReference": "brl-1-2024-30-anos-real",
+      "signals": {"requiredAny": ["30 ANOS", "1994 2024", "1994-2024"], "supporting": ["REAL", "BRASIL", "R$"], "visual": ["bimetallic", "republic_effigy", "diagonal_lines", "marajoara_ring"]},
       "obverse": "Efígie da República, linhas diagonais, símbolo R$, legendas 30 Anos do Real, 1994-2024 e Brasil.",
       "reverse": "Padrão de R$1 da segunda família, com 1 REAL e era 2024.",
-      "sources": [
-        "https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?numero=42174&tipo=Comunicado",
-        "https://www.bcb.gov.br/cedulasemoedas/moedascomemorativas"
-      ]
+      "sources": ["bcb","numista","crmb"]
     },
-    {
-      "id": "brl-1-2019-25-anos-real",
-      "denomination": "1",
-      "year": "2019",
-      "type": "commemorative",
-      "name": "25 anos do Real",
-      "family": "2ª família do Real",
-      "material": "bimetallic",
-      "official": true,
-      "signals": {
-        "requiredAny": ["25 ANOS", "1994 2019", "1994-2019", "BEIJA"],
-        "supporting": ["REAL", "BRASIL"],
-        "visual": ["bimetallic", "hummingbird"]
-      }
-    },
-    {
-      "id": "brl-1-2025-60-anos-bcb",
-      "denomination": "1",
-      "year": "2025",
-      "type": "commemorative",
-      "name": "60 anos do Banco Central do Brasil",
-      "family": "2ª família do Real",
-      "material": "bimetallic",
-      "official": true,
-      "signals": {
-        "requiredAny": ["60 ANOS", "BANCO CENTRAL"],
-        "supporting": ["BRASIL", "REAL"],
-        "visual": ["bimetallic"]
-      }
-    },
-    {
-      "id": "brl-1-1998-direitos-humanos",
-      "denomination": "1",
-      "year": "1998",
-      "type": "commemorative",
-      "name": "50 anos da Declaração Universal dos Direitos Humanos",
-      "family": "2ª família do Real",
-      "material": "bimetallic",
-      "official": true,
-      "signals": {
-        "requiredAny": ["DIREITOS HUMANOS", "HUMANOS"],
-        "supporting": ["BRASIL", "REAL"],
-        "visual": ["bimetallic"]
-      }
-    },
-    {
-      "id": "brl-1-2005-40-anos-bcb",
-      "denomination": "1",
-      "year": "2005",
-      "type": "commemorative",
-      "name": "40 anos do Banco Central do Brasil",
-      "family": "2ª família do Real",
-      "material": "bimetallic",
-      "official": true,
-      "signals": {
-        "requiredAny": ["40 ANOS", "BANCO CENTRAL"],
-        "supporting": ["BRASIL", "REAL"],
-        "visual": ["bimetallic"]
-      }
-    },
-    {
-      "id": "brl-1-2012-bandeira-olimpica",
-      "denomination": "1",
-      "year": "2012",
-      "type": "commemorative",
-      "name": "Entrega da Bandeira Olímpica",
-      "family": "2ª família do Real",
-      "material": "bimetallic",
-      "official": true,
-      "signals": {
-        "requiredAny": ["BANDEIRA OLIMPICA", "OLIMP"],
-        "supporting": ["BRASIL", "REAL"],
-        "visual": ["bimetallic", "olympic"]
-      }
-    },
-    {
-      "id": "brl-0.10-1995-fao",
-      "denomination": "0.10",
-      "year": "1995",
-      "type": "commemorative",
-      "name": "FAO 50 anos",
-      "official": true,
-      "signals": {"requiredAny": ["FAO", "1945 1995", "1945-1995"], "supporting": ["10", "CENTAVOS"]}
-    },
-    {
-      "id": "brl-0.25-1995-fao",
-      "denomination": "0.25",
-      "year": "1995",
-      "type": "commemorative",
-      "name": "FAO 50 anos",
-      "official": true,
-      "signals": {"requiredAny": ["FAO", "1945 1995", "1945-1995"], "supporting": ["25", "CENTAVOS"]}
-    }
+    {"id":"brl-1-2019-25-anos-real","denomination":"1","year":"2019","type":"commemorative","name":"25 anos do Real","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["25 ANOS","1994 2019","1994-2019","BEIJA"],"supporting":["REAL","BRASIL"],"visual":["bimetallic","hummingbird"]},"sources":["bcb","numista","crmb"]},
+    {"id":"brl-1-2025-60-anos-bcb","denomination":"1","year":"2025","type":"commemorative","name":"60 anos do Banco Central do Brasil","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["60 ANOS","BANCO CENTRAL"],"supporting":["BRASIL","REAL"],"visual":["bimetallic"]},"sources":["bcb","numista","crmb"]},
+    {"id":"brl-1-1998-direitos-humanos","denomination":"1","year":"1998","type":"commemorative","name":"50 anos da Declaração Universal dos Direitos Humanos","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["DIREITOS HUMANOS","HUMANOS"],"supporting":["BRASIL","REAL"],"visual":["bimetallic"]},"sources":["bcb","numista","crmb"]},
+    {"id":"brl-1-2005-40-anos-bcb","denomination":"1","year":"2005","type":"commemorative","name":"40 anos do Banco Central do Brasil","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["40 ANOS","BANCO CENTRAL"],"supporting":["BRASIL","REAL"],"visual":["bimetallic"]},"sources":["bcb","numista","crmb"]},
+    {"id":"brl-1-2012-bandeira-olimpica","denomination":"1","year":"2012","type":"commemorative","name":"Entrega da Bandeira Olímpica","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["BANDEIRA OLIMPICA","OLIMP"],"supporting":["BRASIL","REAL"],"visual":["bimetallic","olympic"]},"sources":["bcb","numista","crmb"]},
+    {"id":"brl-0.10-1995-fao","denomination":"0.10","year":"1995","type":"commemorative","name":"FAO 50 anos","official":true,"visualReference":null,"signals":{"requiredAny":["FAO","1945 1995","1945-1995"],"supporting":["10","CENTAVOS"]},"sources":["bcb","numista","crmb"]},
+    {"id":"brl-0.25-1995-fao","denomination":"0.25","year":"1995","type":"commemorative","name":"FAO 50 anos","official":true,"visualReference":null,"signals":{"requiredAny":["FAO","1945 1995","1945-1995"],"supporting":["25","CENTAVOS"]},"sources":["bcb","numista","crmb"]}
   ]
 }
