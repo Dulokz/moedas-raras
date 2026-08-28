@@ -1,0 +1,21 @@
+{
+  "version": "3.0",
+  "families": [
+    {
+      "id": "primeira_familia",
+      "name": "Primeira Família do Real",
+      "start_year": 1994,
+      "end_year": 1997,
+      "description": "Introduzida em 1.º de julho de 1994 com o Plano Real. Moedas em aço inoxidável com diâmetros crescentes proporcionais ao valor nominal.",
+      "general_material": "Aço Inoxidável (com exceção de ligas e comemorativas prateadas)"
+    },
+    {
+      "id": "segunda_familia",
+      "name": "Segunda Família do Real",
+      "start_year": 1998,
+      "end_year": 2025,
+      "description": "Introduzida a partir de 1998 para facilitar a identificação tátil por deficientes visuais através de cores, bordos e diâmetros distintos. Homenageia personalidades históricas do Brasil.",
+      "general_material": "Aço revestido de cobre, aço revestido de bronze, aço inoxidável e bimetálica"
+    }
+  ]
+}

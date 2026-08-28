@@ -1,0 +1,38 @@
+{
+  "version": "3.0",
+  "description": "Registro de Variantes Oficiais e de Cunho Catalogadas — Moedas Raras",
+  "variants": [
+    {
+      "id": "variant-brl-0.50-2019a-marca-a",
+      "issue_id": "issue-brl-0.50-2024-regular",
+      "name": "Moeda de R$ 0,50 2019 com Letra 'A' (Royal Dutch Mint)",
+      "type": "mint_mark",
+      "description": "Cunhada na Holanda pela Royal Dutch Mint com a inserção da pequena letra 'A' no anverso, abaixo da era 2019.",
+      "diagnostic_features": [
+        "Letra 'A' minúscula estampada à direita do ano de 2019 no anverso",
+        "Cunhagem realizada na fábrica de Utrecht (Holanda)"
+      ],
+      "rarity": "scarce",
+      "verification": "verified_official",
+      "sources": [
+        { "source_id": "bcb-moedas-circulacao", "supports": ["mintage", "description"] },
+        { "source_id": "numista-brl", "supports": ["diagnostic_features"] }
+      ]
+    },
+    {
+      "id": "variant-brl-0.05-2019a-marca-a",
+      "issue_id": "issue-brl-0.50-2024-regular",
+      "name": "Moeda de R$ 0,05 2019 com Letra 'A' (Royal Dutch Mint)",
+      "type": "mint_mark",
+      "description": "Cunhada na fábrica da Royal Dutch Mint na Holanda em 2019 com a marca de casa da moeda 'A'.",
+      "diagnostic_features": [
+        "Letra 'A' gravada junto ao ano no anverso"
+      ],
+      "rarity": "scarce",
+      "verification": "verified_official",
+      "sources": [
+        { "source_id": "bcb-moedas-circulacao", "supports": ["description"] }
+      ]
+    }
+  ]
+}

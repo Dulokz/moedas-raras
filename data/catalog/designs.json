@@ -1,0 +1,237 @@
+{
+  "version": "3.0",
+  "description": "Banco de Designs e Obras Artísticas Compartilhadas — Moedas Raras",
+  "designs": [
+    {
+      "id": "design-brl-1-regular-segunda-familia",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "R$ 1,00 Regular — Efígie da República",
+      "theme": "República e Arte Marajoara",
+      "commemorative": false,
+      "obverse": {
+        "description": "Efígie da República no núcleo dourado, ladeada por grafismo de arte indígena marajoara no anel prateado de aço inoxidável.",
+        "inscriptions": ["BRASIL"]
+      },
+      "reverse": {
+        "description": "No anel prateado, grafismo marajoara. No núcleo dourado, valor nominal 1 REAL, ano de cunhagem e esfera sobreposta por faixa diagonal alusiva ao Pavilhão Nacional.",
+        "inscriptions": ["1 REAL"]
+      },
+      "history": {
+        "short_summary": "Moeda padrão bimetálica de 1 Real introduzida em 1.º de julho de 1998.",
+        "context": "Substituiu a moeda prateada de 1 Real da 1ª família (que havia sido retirada devido a falsificações em massa). A estrutura bimetálica tornou a moeda do Real uma das mais seguras do mundo.",
+        "full_text": "Lançada em 1998, a moeda de R$ 1,00 da 2ª família combina anel externo de aço inoxidável com núcleo de liga metálica (inicialmente cuproníquel e, a partir de 2002, aço revestido de bronze). O grafismo indígena da ilha de Marajó celebra as raízes nativas do Brasil."
+      }
+    },
+    {
+      "id": "design-brl-1-primeira-familia",
+      "denomination_value": "1.00",
+      "family_id": "primeira_familia",
+      "name": "R$ 1,00 1ª Família — Efígie da República em Inox",
+      "theme": "Lançamento do Real",
+      "commemorative": false,
+      "obverse": {
+        "description": "Efígie da República centralizada, ladeada pelo dístico BRASIL e o ano de cunhagem.",
+        "inscriptions": ["BRASIL"]
+      },
+      "reverse": {
+        "description": "Valor nominal 1 REAL acompanhado por ramos estilizados de louro.",
+        "inscriptions": ["1 REAL"]
+      },
+      "history": {
+        "short_summary": "Primeira moeda de 1 Real em aço inoxidável lançada em 1994.",
+        "context": "Foi emitida durante a reforma monetária do Plano Real. Devido à sua semelhança visual com a moeda de 25 centavos da época, teve sua produção interrompida em 1997 e foi progressivamente recolhida de circulação pelo Banco Central.",
+        "full_text": "Fabricada em aço inoxidável entre 1994 e 1997, a moeda de R$ 1 da 1ª família possuía diâmetro de 24,0 mm. O modelo foi descontinuado devido a falsificações em ligas metálicas similares e à confusão do público com moedas de valor menor."
+      }
+    },
+    {
+      "id": "design-brl-1-1998-direitos-humanos",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "50 Anos da Declaração Universal dos Direitos Humanos",
+      "theme": "Direitos Humanos",
+      "commemorative": true,
+      "obverse": {
+        "description": "Figura humana estilizada de braços abertos integrada ao broto da esperança, símbolo universal da Declaração dos Direitos Humanos.",
+        "inscriptions": ["DIREITOS HUMANOS", "1948-1998", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real da 2ª família com o valor nominal 1 REAL e era 1998.",
+        "inscriptions": ["1 REAL", "1998"]
+      },
+      "history": {
+        "short_summary": "Moeda comemorativa dos 50 anos da DUDH emitida em 1998 com a menor tiragem do Real (600 mil unidades).",
+        "context": "Emitida para comemorar o cinquentenário da aprovação da Declaração Universal dos Direitos Humanos pela ONU em 1948.",
+        "full_text": "É uma das peças mais valiosas e cobiçadas da numismática moderna brasileira. Com apenas 600.000 exemplares colocados em circulação, a moeda tornou-se o principal troféu de colecionadores do Real."
+      }
+    },
+    {
+      "id": "design-brl-1-2002-jk",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "Centenário de Juscelino Kubitschek",
+      "theme": "Centenário de Nascimento de JK",
+      "commemorative": true,
+      "obverse": {
+        "description": "Busto de perfil de Juscelino Kubitschek no núcleo dourado e pilares da Alvorada no anel prateado.",
+        "inscriptions": ["JUSCELINO KUBITSCHEK", "CENTENÁRIO", "1902-2002", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real da 2ª família com era 2002.",
+        "inscriptions": ["1 REAL", "2002"]
+      },
+      "history": {
+        "short_summary": "Homenagem ao centenário de nascimento do ex-presidente Juscelino Kubitschek (1902-2002).",
+        "context": "Lançada em 2002 pelo Banco Central para celebrar o legado do fundador de Brasília e estadista do desenvolvimento nacional.",
+        "full_text": "Juscelino Kubitschek de Oliveira (1902-1976) foi o presidente responsável pela construção da nova capital federal, Brasília. A moeda comemorativa de 50 milhões de peças retrata o perfil do presidente e os traços da arquitetura moderna de Oscar Niemeyer."
+      }
+    },
+    {
+      "id": "design-brl-1-2005-40-anos-bcb",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "40 Anos do Banco Central do Brasil",
+      "theme": "Quadragenário do BCB",
+      "commemorative": true,
+      "obverse": {
+        "description": "Desenho estilizado da fachada do edifício-sede do Banco Central do Brasil em Brasília.",
+        "inscriptions": ["BANCO CENTRAL DO BRASIL", "1965-2005"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real com era 2005.",
+        "inscriptions": ["1 REAL", "2005"]
+      },
+      "history": {
+        "short_summary": "Comemoração dos 40 anos da fundação do Banco Central do Brasil (1965-2005).",
+        "context": "Criado pela Lei n.º 4.595 de 31 de dezembro de 1964, o BCB iniciou suas atividades em 1.º de março de 1965.",
+        "full_text": "Emitida com tiragem de 40 milhões de exemplares em 2005, a moeda celebra a instituição responsável pela emissão de moedas e controle da inflação no Brasil."
+      }
+    },
+    {
+      "id": "design-brl-1-2012-bandeira-olimpica",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "Entrega da Bandeira Olímpica",
+      "theme": "Passagem dos Jogos Londres 2012 - Rio 2016",
+      "commemorative": true,
+      "obverse": {
+        "description": "Bandeira Olímpica tremulante com os cinco anéis olímpicos no núcleo dourado e legendas comemorativas.",
+        "inscriptions": ["ENTREGA DA BANDEIRA OLÍMPICA", "LONDRES 2012 - RIO 2016"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real com era 2012.",
+        "inscriptions": ["1 REAL", "2012"]
+      },
+      "history": {
+        "short_summary": "Moeda escassa da entrega da Bandeira Olímpica de Londres 2012 para o Rio 2016.",
+        "context": "Lançada em agosto de 2012 durante o encerramento dos Jogos de Londres com a menor tiragem olímpica (2.016.000 peças).",
+        "full_text": "Simboliza o momento em que o Brasil recebeu a responsabilidade de sediar a primeira Olimpíada da América do Sul. Sua tiragem limitada faz com que seja altamente valorizada no mercado."
+      }
+    },
+    {
+      "id": "design-brl-1-2016-rio-2016",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "Jogos Olímpicos e Paralímpicos Rio 2016",
+      "theme": "Série Esportiva Rio 2016",
+      "commemorative": true,
+      "obverse": {
+        "description": "Pictogramas esportivos olímpicos/paralímpicos ou os mascotes Vinicius e Tom acompanhados pela marca oficial dos Jogos Rio 2016.",
+        "inscriptions": ["RIO 2016", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real da 2ª família.",
+        "inscriptions": ["1 REAL"]
+      },
+      "history": {
+        "short_summary": "Série de 16 moedas comemorativas das Olimpíadas e Paralimpíadas Rio 2016.",
+        "context": "Emitidas em 4 conjuntos de 4 moedas entre 2014 e 2016 (Atletismo, Natação, Paratriatlo, Mascotes, etc.).",
+        "full_text": "Com 20 milhões de unidades produzidas por modelo, a coleção estimulou a prática do colecionismo numismático por milhões de brasileiros durante a realização dos Jogos."
+      }
+    },
+    {
+      "id": "design-brl-1-2019-25-anos-real",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "25 Anos do Real",
+      "theme": "Jubileu de Prata do Plano Real",
+      "commemorative": true,
+      "obverse": {
+        "description": "Gravura clássica do beija-flor alimentando filhotes no ninho, inspirada no verso da cédula de 1 Real de 1994.",
+        "inscriptions": ["25 ANOS DO REAL", "1994-2019", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real com era 2019.",
+        "inscriptions": ["1 REAL", "2019"]
+      },
+      "history": {
+        "short_summary": "Moeda comemorativa dos 25 anos do Real com o beija-flor da cédula de R$ 1.",
+        "context": "Lançada em julho de 2019 para celebrar um quarto de século da moeda brasileira.",
+        "full_text": "O beija-flor-de-peito-azul (Amazilia lactea) estampara a famosa cédula verde de R$ 1 lançada em 1994. A moeda comemorativa de 25 milhões de peças resgatou essa imagem icônica."
+      }
+    },
+    {
+      "id": "design-brl-1-2024-30-anos-real",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "30 Anos do Real",
+      "theme": "Trinta Anos de Estabilidade Monetária",
+      "commemorative": true,
+      "obverse": {
+        "description": "Efígie da República sobreposta por linhas diagonais dinâmicas e o símbolo R$, com a inscrição 30 ANOS DO REAL.",
+        "inscriptions": ["30 ANOS DO REAL", "1994-2024", "BRASIL", "R$"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real com era 2024.",
+        "inscriptions": ["1 REAL", "2024"]
+      },
+      "history": {
+        "short_summary": "Moeda comemorativa dos 30 anos do Plano Real lançada em 2024 pelo BCB.",
+        "context": "Emitida em setembro de 2024 com tiragem de 45 milhões de unidades.",
+        "full_text": "Celebra três décadas da moeda que estabilizou a economia brasileira após anos de hiperinflação. Traz no anverso a combinação inédita do símbolo R$ com a Efígie da República."
+      }
+    },
+    {
+      "id": "design-brl-1-2025-60-anos-bcb",
+      "denomination_value": "1.00",
+      "family_id": "segunda_familia",
+      "name": "60 Anos do Banco Central do Brasil",
+      "theme": "Sexagenário do BCB",
+      "commemorative": true,
+      "obverse": {
+        "description": "Desenho arquitetônico do edifício-sede do BCB em Brasília e a legenda 60 ANOS BANCO CENTRAL DO BRASIL 1965-2025.",
+        "inscriptions": ["60 ANOS", "BANCO CENTRAL DO BRASIL", "1965-2025"]
+      },
+      "reverse": {
+        "description": "Padrão bimetálico de 1 Real com era 2025.",
+        "inscriptions": ["1 REAL", "2025"]
+      },
+      "history": {
+        "short_summary": "Comemoração dos 60 anos da fundação do Banco Central do Brasil.",
+        "context": "Emitida para celebrar o sexagenário de criação da autoridade monetária (1965-2025).",
+        "full_text": "Com 45 milhões de peças autorizadas, marca as realizações do BCB na modernização do sistema financeiro nacional."
+      }
+    },
+    {
+      "id": "design-brl-0.50-regular-segunda-familia",
+      "denomination_value": "0.50",
+      "family_id": "segunda_familia",
+      "name": "R$ 0,50 Regular — Barão do Rio Branco",
+      "theme": "Diplomacia e Fronteiras Nacionais",
+      "commemorative": false,
+      "obverse": {
+        "description": "Efígie do Barão do Rio Branco ladeada pelo mapa do Brasil e ramos de louro.",
+        "inscriptions": ["RIO BRANCO", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Valor nominal 50 CENTAVOS, era e faixas diagonais alusivas à bandeira.",
+        "inscriptions": ["50 CENTAVOS"]
+      },
+      "history": {
+        "short_summary": "Moeda prateada de 50 centavos homenageando o patrono da diplomacia brasileira.",
+        "context": "José Maria da Silva Paranhos Júnior, o Barão do Rio Branco (1845-1912), consolidou as fronteiras internacionais do Brasil por meios pacíficos.",
+        "full_text": "Introduzida em 2002 em aço inoxidável e posteriormente em cuproníquel/aço. Possui a característica marcante da inscrição 'ORDEM E PROGRESSO' no bordo."
+      }
+    }
+  ]
+}

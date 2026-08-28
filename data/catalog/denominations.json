@@ -1,0 +1,47 @@
+{
+  "version": "3.0",
+  "denominations": [
+    {
+      "value": "0.01",
+      "label": "R$ 0,01",
+      "name_plural": "1 centavo",
+      "numeric_value": 0.01,
+      "status": "discontinued"
+    },
+    {
+      "value": "0.05",
+      "label": "R$ 0,05",
+      "name_plural": "5 centavos",
+      "numeric_value": 0.05,
+      "status": "active"
+    },
+    {
+      "value": "0.10",
+      "label": "R$ 0,10",
+      "name_plural": "10 centavos",
+      "numeric_value": 0.10,
+      "status": "active"
+    },
+    {
+      "value": "0.25",
+      "label": "R$ 0,25",
+      "name_plural": "25 centavos",
+      "numeric_value": 0.25,
+      "status": "active"
+    },
+    {
+      "value": "0.50",
+      "label": "R$ 0,50",
+      "name_plural": "50 centavos",
+      "numeric_value": 0.50,
+      "status": "active"
+    },
+    {
+      "value": "1.00",
+      "label": "R$ 1,00",
+      "name_plural": "1 Real",
+      "numeric_value": 1.00,
+      "status": "active"
+    }
+  ]
+}

@@ -1,31 +1,504 @@
 {
-  "version": 2,
-  "sourcePolicy": "BCB first; factual metadata may be cross-checked against established catalogs. Embedded visual fingerprints come only from permitted/user-supplied images.",
+  "version": "3.0",
+  "schema": "numismatic-catalog-v3",
+  "description": "Catálogo Numismático Universal das Moedas do Real Brasileiro",
+  "source_policy": "Nível A: Banco Central do Brasil (BCB), Casa da Moeda do Brasil, Museu de Valores. Nível B: Numista, CRMB, Catálogo Bentes, Amato/Neves.",
   "coins": [
     {
       "id": "brl-1-2024-30-anos-real",
-      "denomination": "1",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
       "year": "2024",
+      "mint_mark": "Nenhum",
       "type": "commemorative",
-      "name": "30 anos do Real",
-      "family": "2ª família do Real",
-      "material": "bimetallic",
-      "diameterMm": 27,
-      "weightG": 7,
+      "design_name": "30 anos do Real",
+      "commemorative": true,
+      "status": "official",
+      "history": {
+        "title": "Comemoração dos 30 Anos do Plano Real",
+        "short_summary": "Moeda bimetálica comemorativa dos 30 anos da introdução do Real (1994-2024).",
+        "full_context": "Emitida pelo Banco Central do Brasil em setembro de 2024 para celebrar as três décadas de estabilização econômica conquistadas a partir da implementação do Plano Real em 1.º de julho de 1994. O anverso traz a Efígie da República combinada com o símbolo do Real R$ e grafismos geométricos modernos.",
+        "event": "30 Anos do Real (1994-2024)",
+        "issue_date": "2024-09-24"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.0,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
       "mintage": 45000000,
-      "official": true,
-      "visualReference": "brl-1-2024-30-anos-real",
-      "signals": {"requiredAny": ["30 ANOS", "1994 2024", "1994-2024"], "supporting": ["REAL", "BRASIL", "R$"], "visual": ["bimetallic", "republic_effigy", "diagonal_lines", "marajoara_ring"]},
-      "obverse": "Efígie da República, linhas diagonais, símbolo R$, legendas 30 Anos do Real, 1994-2024 e Brasil.",
-      "reverse": "Padrão de R$1 da segunda família, com 1 REAL e era 2024.",
-      "sources": ["bcb","numista","crmb"]
+      "obverse": {
+        "description": "No núcleo dourado, Efígie da República sobreposta por linhas diagonais e o símbolo R$. No anel prateado, as legendas 30 ANOS DO REAL, 1994-2024 e a palavra BRASIL.",
+        "inscriptions": ["30 ANOS DO REAL", "1994-2024", "BRASIL", "R$"]
+      },
+      "reverse": {
+        "description": "Padrão da 2ª família de R$ 1: no anel, grafismo marajoara. No núcleo, esfera sobreposta por faixa diagonal, valor nominal 1 REAL e era 2024.",
+        "inscriptions": ["1 REAL", "2024"]
+      },
+      "rarity": {
+        "relative_rarity": "Comum em circulação",
+        "notes": "Tiragem expressiva de 45 milhões de peças, amplamente distribuída na rede bancária."
+      },
+      "known_variants": [],
+      "known_errors": [
+        "Reverso invertido (180°)",
+        "Reverso horizontal (90°)",
+        "Núcleo deslocado / vazado",
+        "Batida dupla no anverso"
+      ],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/cedulasemoedas/moedascomemorativas",
+          "evidence_level": "A"
+        },
+        {
+          "source": "Numista",
+          "url": "https://pt.numista.com/catalogue/pieces414241.html",
+          "evidence_level": "B"
+        }
+      ],
+      "visual_references": [
+        {
+          "source": "BCB Acervo Oficial",
+          "license": "Uso Institucional BCB",
+          "side": "both"
+        }
+      ]
     },
-    {"id":"brl-1-2019-25-anos-real","denomination":"1","year":"2019","type":"commemorative","name":"25 anos do Real","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["25 ANOS","1994 2019","1994-2019","BEIJA"],"supporting":["REAL","BRASIL"],"visual":["bimetallic","hummingbird"]},"sources":["bcb","numista","crmb"]},
-    {"id":"brl-1-2025-60-anos-bcb","denomination":"1","year":"2025","type":"commemorative","name":"60 anos do Banco Central do Brasil","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["60 ANOS","BANCO CENTRAL"],"supporting":["BRASIL","REAL"],"visual":["bimetallic"]},"sources":["bcb","numista","crmb"]},
-    {"id":"brl-1-1998-direitos-humanos","denomination":"1","year":"1998","type":"commemorative","name":"50 anos da Declaração Universal dos Direitos Humanos","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["DIREITOS HUMANOS","HUMANOS"],"supporting":["BRASIL","REAL"],"visual":["bimetallic"]},"sources":["bcb","numista","crmb"]},
-    {"id":"brl-1-2005-40-anos-bcb","denomination":"1","year":"2005","type":"commemorative","name":"40 anos do Banco Central do Brasil","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["40 ANOS","BANCO CENTRAL"],"supporting":["BRASIL","REAL"],"visual":["bimetallic"]},"sources":["bcb","numista","crmb"]},
-    {"id":"brl-1-2012-bandeira-olimpica","denomination":"1","year":"2012","type":"commemorative","name":"Entrega da Bandeira Olímpica","family":"2ª família do Real","material":"bimetallic","official":true,"visualReference":null,"signals":{"requiredAny":["BANDEIRA OLIMPICA","OLIMP"],"supporting":["BRASIL","REAL"],"visual":["bimetallic","olympic"]},"sources":["bcb","numista","crmb"]},
-    {"id":"brl-0.10-1995-fao","denomination":"0.10","year":"1995","type":"commemorative","name":"FAO 50 anos","official":true,"visualReference":null,"signals":{"requiredAny":["FAO","1945 1995","1945-1995"],"supporting":["10","CENTAVOS"]},"sources":["bcb","numista","crmb"]},
-    {"id":"brl-0.25-1995-fao","denomination":"0.25","year":"1995","type":"commemorative","name":"FAO 50 anos","official":true,"visualReference":null,"signals":{"requiredAny":["FAO","1945 1995","1945-1995"],"supporting":["25","CENTAVOS"]},"sources":["bcb","numista","crmb"]}
+    {
+      "id": "brl-1-2019-25-anos-real",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
+      "year": "2019",
+      "mint_mark": "Nenhum",
+      "type": "commemorative",
+      "design_name": "25 anos do Real",
+      "commemorative": true,
+      "status": "official",
+      "history": {
+        "title": "Comemoração dos 25 Anos do Real",
+        "short_summary": "Moeda comemorativa com a gravura do beija-flor alimentando os filhotes no ninho.",
+        "full_context": "Lançada em 2019 em alusão ao beija-flor estampado na cédula clássica de 1 Real de 1994, simbolizando a estabilidade do Real.",
+        "event": "25 Anos do Real",
+        "issue_date": "2019-07-01"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.0,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 25000000,
+      "obverse": {
+        "description": "Beija-flor alimentando filhotes no ninho, gravura inspirada na cédula de R$ 1 de 1994, legendas 25 ANOS DO REAL e 1994-2019.",
+        "inscriptions": ["25 ANOS DO REAL", "1994-2019", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Padrão de R$ 1 da 2ª família com era 2019.",
+        "inscriptions": ["1 REAL", "2019"]
+      },
+      "rarity": {
+        "relative_rarity": "Comum a Moderada",
+        "notes": "Tiragem de 25 milhões. Muito procurada por colecionadores."
+      },
+      "known_variants": [],
+      "known_errors": [
+        "Reverso invertido",
+        "Cunho marcado"
+      ],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/",
+          "evidence_level": "A"
+        }
+      ],
+      "visual_references": []
+    },
+    {
+      "id": "brl-1-2025-60-anos-bcb",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
+      "year": "2025",
+      "mint_mark": "Nenhum",
+      "type": "commemorative",
+      "commemorative": true,
+      "status": "official",
+      "history": {
+        "title": "60 Anos do Banco Central do Brasil",
+        "short_summary": "Moeda comemorativa dos 60 anos da fundação da autoridade monetária brasileira.",
+        "full_context": "Emitida para marcar o sexagenário da criação do Banco Central do Brasil (1965-2025), destacando a arquitetura de sua sede em Brasília.",
+        "event": "60 Anos do BCB",
+        "issue_date": "2025-01-15"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.0,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 45000000,
+      "obverse": {
+        "description": "Desenho arquitetônico do edifício-sede do BCB em Brasília e a legenda 60 ANOS BANCO CENTRAL DO BRASIL 1965-2025.",
+        "inscriptions": ["60 ANOS", "BANCO CENTRAL DO BRASIL", "1965-2025"]
+      },
+      "reverse": {
+        "description": "Padrão de R$ 1 da 2ª família com era 2025.",
+        "inscriptions": ["1 REAL", "2025"]
+      },
+      "rarity": {
+        "relative_rarity": "Comum",
+        "notes": "Tiragem oficial de 45 milhões."
+      },
+      "known_variants": [],
+      "known_errors": [],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/",
+          "evidence_level": "A"
+        }
+      ],
+      "visual_references": []
+    },
+    {
+      "id": "brl-1-1998-direitos-humanos",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
+      "year": "1998",
+      "mint_mark": "Nenhum",
+      "type": "commemorative",
+      "design_name": "50 anos da Declaração Universal dos Direitos Humanos",
+      "commemorative": true,
+      "status": "official",
+      "history": {
+        "title": "50 Anos dos Direitos Humanos",
+        "short_summary": "Uma das moedas mais raras e valiosas de circulação comum no Brasil.",
+        "full_context": "Emitida em 1998 com a menor tiragem de moedas de R$ 1 da 2ª família (apenas 600 mil unidades). Traz a figura estilizada dos Direitos Humanos.",
+        "event": "50 Anos da DUDH",
+        "issue_date": "1998-12-10"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.84,
+        "thickness_mm": 2.0,
+        "material": "Bimetálica (Núcleo de cuproníquel, anel de alpaca)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 600000,
+      "obverse": {
+        "description": "Figura estilizada humana de braços abertos, símbolo dos Direitos Humanos e legenda DIREITOS HUMANOS 1948-1998.",
+        "inscriptions": ["DIREITOS HUMANOS", "1948-1998", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Padrão de R$ 1 da 2ª família com era 1998.",
+        "inscriptions": ["1 REAL", "1998"]
+      },
+      "rarity": {
+        "relative_rarity": "Rara / Alta Valorização Numismática",
+        "notes": "Apenas 600.000 exemplares produzidos. Peça-chave da coleção do Real."
+      },
+      "known_variants": [],
+      "known_errors": [
+        "Reverso invertido",
+        "Cunho fraco no anverso"
+      ],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/",
+          "evidence_level": "A"
+        },
+        {
+          "source": "Catálogo Bentes",
+          "url": "https://bentes.com/",
+          "evidence_level": "B"
+        }
+      ],
+      "visual_references": []
+    },
+    {
+      "id": "brl-1-2005-40-anos-bcb",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
+      "year": "2005",
+      "mint_mark": "Nenhum",
+      "type": "commemorative",
+      "design_name": "40 anos do Banco Central do Brasil",
+      "commemorative": true,
+      "status": "official",
+      "history": {
+        "title": "40 Anos do Banco Central do Brasil",
+        "short_summary": "Moeda comemorativa dos 40 anos do BCB (1965-2005).",
+        "full_context": "Emitida em 2005 com motivo comemorativo da fachada estilizada do BCB.",
+        "event": "40 Anos BCB",
+        "issue_date": "2005-12-31"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.0,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 40000000,
+      "obverse": {
+        "description": "Fachada do prédio sede do BCB em Brasília e legenda BANCO CENTRAL DO BRASIL 1965-2005.",
+        "inscriptions": ["BANCO CENTRAL DO BRASIL", "1965-2005"]
+      },
+      "reverse": {
+        "description": "Padrão de R$ 1 da 2ª família com era 2005.",
+        "inscriptions": ["1 REAL", "2005"]
+      },
+      "rarity": {
+        "relative_rarity": "Comum",
+        "notes": "Tiragem de 40 milhões."
+      },
+      "known_variants": [],
+      "known_errors": [],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/",
+          "evidence_level": "A"
+        }
+      ],
+      "visual_references": []
+    },
+    {
+      "id": "brl-1-2012-bandeira-olimpica",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
+      "year": "2012",
+      "mint_mark": "Nenhum",
+      "type": "commemorative",
+      "design_name": "Entrega da Bandeira Olímpica",
+      "commemorative": true,
+      "status": "official",
+      "history": {
+        "title": "Passagem da Bandeira Olímpica (Londres 2012 - Rio 2016)",
+        "short_summary": "Moeda comemorativa da passagem da Bandeira Olímpica de Londres para o Rio de Janeiro.",
+        "full_context": "Emitida em 2012 para marcar a entrega da Bandeira Olímpica ao Brasil. Possui tiragem de apenas 2,016 milhões de peças, sendo muito cobiçada.",
+        "event": "Passagem da Bandeira Olímpica",
+        "issue_date": "2012-08-12"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.0,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 2016000,
+      "obverse": {
+        "description": "Bandeira Olímpica com os cinco anéis e a legenda ENTREGA DA BANDEIRA OLÍMPICA LONDRES 2012 - RIO 2016.",
+        "inscriptions": ["ENTREGA DA BANDEIRA OLÍMPICA", "LONDRES 2012 - RIO 2016"]
+      },
+      "reverse": {
+        "description": "Padrão de R$ 1 da 2ª família com era 2012.",
+        "inscriptions": ["1 REAL", "2012"]
+      },
+      "rarity": {
+        "relative_rarity": "Escassa / Alta Procura",
+        "notes": "Tiragem alusiva ao ano de 2016 (2.016.000 peças). Alta valorização no mercado numismático."
+      },
+      "known_variants": [],
+      "known_errors": [],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/",
+          "evidence_level": "A"
+        }
+      ],
+      "visual_references": []
+    },
+    {
+      "id": "brl-1-2016-rio-2016",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
+      "year": "2016",
+      "mint_mark": "Nenhum",
+      "type": "commemorative",
+      "design_name": "Jogos Olímpicos e Paralímpicos Rio 2016",
+      "commemorative": true,
+      "status": "official",
+      "history": {
+        "title": "Série Olímpica Rio 2016",
+        "short_summary": "Coleção de 16 moedas comemorativas das modalidades e mascotes dos Jogos Rio 2016.",
+        "full_context": "Emitidas em 4 lotes entre 2014 e 2016 representando Atletismo, Natação, Paratriatlo, Mascotes Vinicius e Tom, entre outras.",
+        "event": "Jogos Olímpicos Rio 2016",
+        "issue_date": "2016-08-05"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.0,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 20000000,
+      "obverse": {
+        "description": "Desenho de modalidade esportiva ou mascote com o logotipo dos Jogos Rio 2016 e legenda BRASIL.",
+        "inscriptions": ["RIO 2016", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Padrão de R$ 1 da 2ª família.",
+        "inscriptions": ["1 REAL"]
+      },
+      "rarity": {
+        "relative_rarity": "Comum a Moderada",
+        "notes": "Tiragem de 20 milhões por modelo."
+      },
+      "known_variants": [],
+      "known_errors": [],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/",
+          "evidence_level": "A"
+        }
+      ],
+      "visual_references": []
+    },
+    {
+      "id": "brl-1-regular-segunda-familia",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "1.00",
+      "family": "segunda_familia",
+      "year": "2024",
+      "mint_mark": "Nenhum",
+      "type": "regular",
+      "design_name": "R$ 1 Regular (Efígie da República)",
+      "commemorative": false,
+      "status": "official",
+      "history": {
+        "title": "Moeda Padrão de R$ 1,00 da Segunda Família",
+        "short_summary": "Moeda de circulação comum bimetálica introduzida em 1998.",
+        "full_context": "Substituiu a moeda prateada de 1 Real da 1ª família. O anverso destaca a Efígie da República e o anel é ornamentado com arte marajoara.",
+        "event": "Lançamento da 2ª Família do Real",
+        "issue_date": "1998-07-01"
+      },
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.0,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 100000000,
+      "obverse": {
+        "description": "Efígie da República no núcleo dourado, ladeada por grafismo marajoara no anel prateado.",
+        "inscriptions": ["BRASIL"]
+      },
+      "reverse": {
+        "description": "No anel, grafismo marajoara; no núcleo, valor 1 REAL, era e esfera sobreposta por faixa diagonal.",
+        "inscriptions": ["1 REAL"]
+      },
+      "rarity": {
+        "relative_rarity": "Muito Comum",
+        "notes": "Emissão de larga escala para troco diário."
+      },
+      "known_variants": [],
+      "known_errors": [
+        "Reverso invertido",
+        "Reverso horizontal",
+        "Cunho descentralizado",
+        "Núcleo deslocado"
+      ],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/cedulasemoedas/moedasemitidas",
+          "evidence_level": "A"
+        }
+      ],
+      "visual_references": []
+    },
+    {
+      "id": "brl-0.50-regular-segunda-familia",
+      "country": "Brasil",
+      "currency": "BRL",
+      "denomination": "0.50",
+      "family": "segunda_familia",
+      "year": "2024",
+      "mint_mark": "Nenhum",
+      "type": "regular",
+      "design_name": "R$ 0,50 Regular (Barão do Rio Branco)",
+      "commemorative": false,
+      "status": "official",
+      "history": {
+        "title": "Moeda Padrão de R$ 0,50 da Segunda Família",
+        "short_summary": "Moeda prateada com bordo inscrito 'ORDEM E PROGRESSO'.",
+        "full_context": "Homenageia o Barão do Rio Branco, diplomata responsável pela consolidação das fronteiras do Brasil.",
+        "event": "Lançamento da 2ª Família do Real",
+        "issue_date": "2002-07-01"
+      },
+      "specifications": {
+        "diameter_mm": 23.0,
+        "weight_g": 6.8,
+        "thickness_mm": 2.85,
+        "material": "Aço inoxidável / Cuproníquel",
+        "edge": "Inscrito * ORDEM E PROGRESSO *",
+        "alignment": "Moeda (180°)"
+      },
+      "mintage": 80000000,
+      "obverse": {
+        "description": "Efígie do Barão do Rio Branco e mapa do Brasil.",
+        "inscriptions": ["RIO BRANCO", "BRASIL"]
+      },
+      "reverse": {
+        "description": "Valor 50 CENTAVOS, era e faixas diagonais alusivas à bandeira.",
+        "inscriptions": ["50 CENTAVOS"]
+      },
+      "rarity": {
+        "relative_rarity": "Muito Comum",
+        "notes": "Circulação regular."
+      },
+      "known_variants": [
+        "2019A com letra A da Royal Dutch Mint",
+        "2012 Mula sem Rio Branco"
+      ],
+      "known_errors": [
+        "Reverso invertido",
+        "Bordo liso / sem inscrição"
+      ],
+      "references": [
+        {
+          "source": "Banco Central do Brasil",
+          "url": "https://www.bcb.gov.br/",
+          "evidence_level": "A"
+        }
+      ],
+      "visual_references": []
+    }
   ]
 }

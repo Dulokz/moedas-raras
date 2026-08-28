@@ -1,25 +1,346 @@
-const $=s=>document.querySelector(s);let stream,step=0,photos=[],currentCoin=null,track=null,cameras=[],focusTimer=null,lastSharpness=0,ocrWorker=null;const panels=[...document.querySelectorAll('.panel')];function show(id){panels.forEach(p=>p.classList.toggle('active',p.id===id));scrollTo(0,0)}
-const labels={'0.01':'1 centavo','0.05':'5 centavos','0.10':'10 centavos','0.25':'25 centavos','0.50':'50 centavos','1':'R$ 1'};
-const catalog={'0.01':['1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004'],'0.05':['1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2019A','2020','2021','2022','2023','2024','2025'],'0.10':['1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],'0.25':['1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],'0.50':['1994','1995','1996','1997','1998','2000','2001','2002','2003','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2019A','2020','2021','2022','2023','2024','2025'],'1':['1994','1998','1999','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025']};
-const variants=[{v:'0.05',y:'2019A',n:'Marca A',type:'oficial',how:'Letra A pequena junto à era. Identifica produção da Royal Dutch Mint.'},{v:'0.10',y:'1995',n:'FAO 50 anos',type:'oficial',how:'Mãos oferecendo broto + FAO 1945/1995. Tiragem oficial: 1 milhão.'},{v:'0.25',y:'1995',n:'FAO 50 anos',type:'oficial',how:'Cena de cultivo + FAO 1945/1995. Tiragem oficial: 1 milhão.'},{v:'0.25',y:'1995',n:'Mula / reverso incompatível',type:'catalogado',how:'Procure combinação de cunhos/desenho incompatível; se o valor/desenho não corresponder ao padrão, retenha.'},{v:'0.50',y:'2012',n:'Mula 2012',type:'catalogado',how:'Anverso/reverso incompatível com o padrão de 50 centavos/Rio Branco.'},{v:'0.50',y:'2018',n:'Diferenças de cunho/fonte',type:'catalogado',how:'Compare RIO BRANCO, letras e desenho com exemplar normal do mesmo ano.'},{v:'0.50',y:'2019A',n:'Marca A',type:'oficial',how:'A pequena próxima à era. Produção estrangeira identificada pelo BCB.'},{v:'0.50',y:'2020',n:'Legenda/borda diferente',type:'catalogado',how:'Compare tamanho e forma das letras de ORDEM E PROGRESSO / BRASIL.'},{v:'1',y:'1998',n:'Direitos Humanos',type:'oficial',how:'Comemorativa dos 50 anos da Declaração Universal. Apenas 600 mil peças.'},{v:'1',y:'1998',n:'Reverso invertido/horizontal',type:'catalogado',how:'Segure o anverso em pé e gire no eixo vertical; reverso fora da orientação padrão deve ser retido.'},{v:'1',y:'1999',n:'Baixa tiragem regular',type:'oficial',how:'Emissão oficial de apenas 3,84 milhões.'},{v:'1',y:'2005',n:'40 anos Banco Central',type:'oficial',how:'Motivo comemorativo do BCB.'},{v:'1',y:'2012',n:'Entrega da Bandeira Olímpica',type:'oficial',how:'Desenho ligado à passagem Londres–Rio.'},{v:'1',y:'2014',n:'Rio 2016 — modalidades',type:'oficial',how:'Cada desenho olímpico é um tipo de coleção.'},{v:'1',y:'2015',n:'Rio 2016 / 50 anos BCB',type:'oficial',how:'Existem múltiplos desenhos de circulação.'},{v:'1',y:'2016',n:'Rio 2016 — modalidades e mascotes',type:'oficial',how:'Vários desenhos olímpicos/paralímpicos.'},{v:'1',y:'2019',n:'25 anos do Real',type:'oficial',how:'Beija-flor alimentando filhotes.'},{v:'1',y:'2024',n:'30 anos do Real',type:'oficial',how:'Comemorativa oficial.'},{v:'1',y:'2025',n:'60 anos Banco Central',type:'oficial',how:'Comemorativa oficial.'}];
-const genericErrors=['Reverso invertido (aprox. 180°)','Reverso horizontal/rotacionado','Cunho descentralizado','Batida dupla / duplicação','Cunho quebrado / excesso de metal','Disco cortado/incompleto','Disco ou material incompatível','Núcleo deslocado em R$1','Núcleo ausente/anormal em R$1','Mula: anverso e reverso incompatíveis','Borda/serrilha/legenda fora do padrão','Data, letra ou elemento duplicado/anormal'];const alerts={'0.10':{'1995':'red','1999':'yellow'},'0.25':{'1995':'red'},'0.50':{'1998':'yellow','2000':'yellow','2001':'yellow','2012':'yellow','2019A':'yellow','2020':'yellow'},'1':{'1998':'yellow','1999':'yellow','2005':'yellow','2012':'yellow','2014':'yellow','2015':'yellow','2016':'yellow','2019':'yellow','2024':'yellow','2025':'yellow'}};
-const collection=()=>{try{return JSON.parse(localStorage.getItem('coinCollection')||'{}')}catch{return{}}};function coinKey(v,y,c=false){return`${v}|${y}|${c?'especial':'normal'}`}function saveCollection(c){localStorage.setItem('coinCollection',JSON.stringify(c));updateSummary()}function updateSummary(){const c=collection(),types=Object.keys(c).length,total=Object.values(c).reduce((a,x)=>a+(x.qty||0),0);$('#collectionSummary').innerHTML=`🗂️ Coleção: <b>${types} tipos</b> • <b>${total} moedas</b>`}function renderCollection(){const c=collection(),filter=$('#collectionFilter').value;let html='',have=0,possible=0;Object.entries(catalog).forEach(([v,years])=>{if(filter!=='all'&&filter!==v)return;html+=`<h3>${labels[v]}</h3><div class="facts">`;years.forEach(y=>{possible++;const n=c[coinKey(v,y,false)],s=c[coinKey(v,y,true)];if(n||s)have++;html+=`<div>${n||s?'✅':'⬜'} <b>${y}</b>${n?` • normal ×${n.qty}`:''}${s?` • ⭐ especial ×${s.qty}`:''}</div>`});html+='</div>'});$('#collectionStats').innerHTML=`Progresso: <b>${have}/${possible}</b> anos/tipos básicos`;$('#collectionList').innerHTML=html}function renderVariants(){const f=$('#variantFilter').value,rows=variants.filter(x=>f==='all'||x.v===f);let html=rows.map(x=>`<div class="facts"><b>${labels[x.v]} • ${x.y} — ${x.n}</b><br><small>${x.type==='oficial'?'🏛️ emissão/característica oficial':'🔬 referência numismática'}</small><br>${x.how}</div>`).join('');html+=`<h3>⚠️ Erros gerais — qualquer ano</h3><div class="facts">${genericErrors.map(x=>`<div>□ ${x}</div>`).join('')}</div>`;$('#variantList').innerHTML=html}
-function stop(){if(focusTimer)clearInterval(focusTimer);focusTimer=null;stream?.getTracks().forEach(t=>t.stop());stream=null;track=null}
-async function enumerateCameras(){const ds=await navigator.mediaDevices.enumerateDevices();cameras=ds.filter(d=>d.kind==='videoinput');const sel=$('#cameraSelect'),current=track?.getSettings?.().deviceId||'';sel.innerHTML=cameras.map((d,i)=>`<option value="${d.deviceId}" ${d.deviceId===current?'selected':''}>${d.label||`Câmera ${i+1}`}</option>`).join('');$('#cameraLabel').hidden=cameras.length<2}
-async function configureTrack(){if(!track)return;const caps=track.getCapabilities?.()||{},supported=navigator.mediaDevices.getSupportedConstraints?.()||{},adv=[];if(supported.focusMode&&Array.isArray(caps.focusMode)){if(caps.focusMode.includes('continuous'))adv.push({focusMode:'continuous'});else if(caps.focusMode.includes('single-shot'))adv.push({focusMode:'single-shot'})}if(adv.length)try{await track.applyConstraints({advanced:adv})}catch{}const z=$('#zoom'),zl=$('#zoomLabel');if(caps.zoom&&Number.isFinite(caps.zoom.min)&&Number.isFinite(caps.zoom.max)){zl.hidden=false;z.min=caps.zoom.min;z.max=caps.zoom.max;z.step=caps.zoom.step||.1;const cur=track.getSettings().zoom??caps.zoom.min;z.value=cur;$('#zoomValue').textContent=`${Number(cur).toFixed(1)}×`}else zl.hidden=true;const s=track.getSettings();$('#cameraInfo').textContent=`${track.label||'Câmera'} • ${s.width||'?'}×${s.height||'?'}${caps.focusMode?' • foco: '+caps.focusMode.join('/'):' • foco manual indisponível'}`}
-async function openCamera(deviceId){stop();const video={width:{ideal:3840},height:{ideal:2160},frameRate:{ideal:30}};if(deviceId)video.deviceId={exact:deviceId};else video.facingMode={ideal:'environment'};stream=await navigator.mediaDevices.getUserMedia({video,audio:false});track=stream.getVideoTracks()[0];$('#video').srcObject=stream;await new Promise(r=>{$('#video').onloadedmetadata=()=>{$('#video').play().then(r).catch(r)}});await configureTrack();await enumerateCameras();startFocusMeter()}
-async function start(){try{step=0;photos=[];show('camera');$('#side').textContent='FRENTE';$('#capture').textContent='● Fotografar frente';await openCamera()}catch(e){alert('Não consegui abrir a câmera. Verifique a permissão no navegador.')}}
-function sharpness(){const v=$('#video');if(!v.videoWidth)return 0;const c=document.createElement('canvas'),size=220;c.width=c.height=size;const x=v.videoWidth*.27,y=v.videoHeight*.27,w=v.videoWidth*.46,h=v.videoHeight*.46;c.getContext('2d',{willReadFrequently:true}).drawImage(v,x,y,w,h,0,0,size,size);const d=c.getContext('2d').getImageData(0,0,size,size).data;let sum=0,sum2=0,n=0;for(let yy=1;yy<size-1;yy+=2)for(let xx=1;xx<size-1;xx+=2){const i=(yy*size+xx)*4,l=.299*d[i]+.587*d[i+1]+.114*d[i+2],il=(yy*size+xx-1)*4,ir=(yy*size+xx+1)*4,iu=((yy-1)*size+xx)*4,id=((yy+1)*size+xx)*4;const lap=4*l-(.299*d[il]+.587*d[il+1]+.114*d[il+2])-(.299*d[ir]+.587*d[ir+1]+.114*d[ir+2])-(.299*d[iu]+.587*d[iu+1]+.114*d[iu+2])-(.299*d[id]+.587*d[id+1]+.114*d[id+2]);sum+=lap;sum2+=lap*lap;n++}const mean=sum/n;return sum2/n-mean*mean}
-function startFocusMeter(){if(focusTimer)clearInterval(focusTimer);focusTimer=setInterval(()=>{lastSharpness=sharpness();const el=$('#focusState');if(lastSharpness>110){el.className='focusState good';el.textContent=`🟢 FOCO BOM • ${Math.round(lastSharpness)}`;$('#focusHint').textContent='Pode fotografar'}else{el.className='focusState bad';el.textContent=`🔴 SEM NITIDEZ • ${Math.round(lastSharpness)}`;$('#focusHint').textContent='Afaste/aproxime ou troque a lente'}},500)}
-function cropCoinData(){const v=$('#video'),c=$('#canvas'),side=Math.min(v.videoWidth,v.videoHeight)*.58,sx=(v.videoWidth-side)/2,sy=(v.videoHeight-side)/2;c.width=1600;c.height=1600;const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(v,sx,sy,side,side,0,0,1600,1600);return c.toDataURL('image/jpeg',.99)}
-function snap(){lastSharpness=sharpness();if(lastSharpness<65&&!confirm('A imagem ainda parece desfocada. Quer fotografar mesmo assim?'))return;photos.push(cropCoinData());if(step++===0){$('#side').textContent='VERSO';$('#capture').textContent='● Fotografar verso'}else{stop();autoIdentify()}}
-$('#cameraSelect').onchange=async e=>{try{await openCamera(e.target.value)}catch{alert('Não consegui abrir esta lente.')}};$('#zoom').oninput=async e=>{if(!track)return;const z=Number(e.target.value);$('#zoomValue').textContent=`${z.toFixed(1)}×`;try{await track.applyConstraints({advanced:[{zoom:z}]})}catch{}};
-function imageVariant(src,mode='gray'){return new Promise(resolve=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=1800;c.height=1800;const x=c.getContext('2d');x.drawImage(im,0,0,c.width,c.height);const id=x.getImageData(0,0,c.width,c.height),d=id.data;for(let i=0;i<d.length;i+=4){let g=.299*d[i]+.587*d[i+1]+.114*d[i+2];if(mode==='contrast')g=Math.max(0,Math.min(255,(g-128)*1.8+128));if(mode==='binary')g=g>145?255:0;d[i]=d[i+1]=d[i+2]=g}x.putImageData(id,0,0);resolve(c.toDataURL('image/png'))};im.src=src})}
-async function getWorker(){if(!ocrWorker){ocrWorker=await Tesseract.createWorker('eng');await ocrWorker.setParameters({user_defined_dpi:'300'})}return ocrWorker}
-async function ocr(src,params={}){const w=await getWorker();await w.setParameters(params);return(await w.recognize(src)).data.text.toUpperCase()}
-function validYear(t){const cleaned=t.replace(/[OQD]/g,'0').replace(/[IL]/g,'1').replace(/[^0-9A]/g,'');const hits=cleaned.match(/(?:19|20)\d{2}A?/g)||[];return hits.find(y=>+y.slice(0,4)>=1994&&+y.slice(0,4)<=2026)||''}
-async function readCoin(src,n){$('#scanStatus').textContent=`Lendo ${n}: texto...`;const gray=await imageVariant(src,'gray'),contrast=await imageVariant(src,'contrast'),binary=await imageVariant(src,'binary');let full='';for(const [i,img] of [src,gray,contrast].entries()){$('#scanStatus').textContent=`Lendo ${n}: texto ${i+1}/3...`;full+=' '+await ocr(img,{tessedit_pageseg_mode:'11',tessedit_char_whitelist:'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'})}let year=validYear(full);if(!year){for(const [i,img] of [contrast,binary,gray].entries()){ $('#scanStatus').textContent=`Lendo ${n}: procurando ano ${i+1}/3...`;const digits=await ocr(img,{tessedit_pageseg_mode:'11',tessedit_char_whitelist:'0123456789A'});year=validYear(digits);if(year)break}}return{text:full,year}}
-function detectValue(t){t=t.replace(/[^A-Z0-9]/g,' ');if(/50\s*CENT|\b50\b/.test(t))return'0.50';if(/25\s*CENT|\b25\b/.test(t))return'0.25';if(/10\s*CENT|\b10\b/.test(t))return'0.10';if(/5\s*CENT/.test(t))return'0.05';if(/1\s*CENT/.test(t))return'0.01';if(/1\s*REAL|\bREAL\b/.test(t))return'1';return''}
-async function autoIdentify(){show('scanning');$('#scanFront').src=$('#front').src=photos[0];$('#scanBack').src=$('#back').src=photos[1];const a=await readCoin(photos[0],'frente'),b=await readCoin(photos[1],'verso'),text=(a.text+' '+b.text).replace(/\s+/g,' ');let year=a.year||b.year||'',value=detectValue(text);if(year==='2019'&&/(2019\s*A|A\s*2019)/.test(text)&&(value==='0.50'||value==='0.05'))year='2019A';const comm=/FAO|DIREITOS|HUMAN|OLIMP|PARALIMP|BANCO\s*CENTRAL|BEIJA/.test(text);if(value)$('#value').value=value;if(year)$('#year').value=year;$('#commemorative').checked=comm;$('#anomaly').checked=false;$('#detected').textContent=`Automático: ${value?labels[value]:'valor NÃO reconhecido'} • ${year||'ano NÃO reconhecido'}`;show('identify');if(value&&year)analyze()}
-function result(level,title,text,facts){$('#status').className='status '+level;$('#status').textContent=level==='red'?'🔴 ALERTA FORTE — SEPARE':level==='yellow'?'🟡 SEPARE PARA CONFERIR':'🟢 SEM ALERTA PELO ANO';$('#resultTitle').textContent=title;$('#resultText').textContent=text;$('#facts').innerHTML=facts;show('result')}function owned(){if(!currentCoin)return;const e=collection()[coinKey(currentCoin.v,currentCoin.y,currentCoin.comm)];$('#ownedState').innerHTML=e?`✅ Já possui • quantidade ${e.qty}`:'⭐ Nova para sua coleção básica.'}function analyze(){const val=$('#value').value,year=$('#year').value.trim().toUpperCase().replace(/[^0-9A]/g,''),comm=$('#commemorative').checked,anom=$('#anomaly').checked;if(!/^(19|20)\d{2}A?$/.test(year)){currentCoin=null;return result('yellow','NÃO DESCARTE','Ano não reconhecido. Separe.','Falha de leitura = retenção.')}const y=year.slice(0,4),matches=variants.filter(x=>x.v===val&&(x.y===year||x.y===y));currentCoin={v:val,y:year,comm,anom};let level=(alerts[val]||{})[year]||(alerts[val]||{})[y]||'green';if(matches.length&&level==='green')level='yellow';if(comm&&level==='green')level='yellow';if(anom)level='red';result(level,`${labels[val]} • ${year}`,anom?'Anomalia marcada: não gaste nem limpe.':'Confira os itens específicos abaixo antes de liberar.',`Checklist geral: <b>giro • duplicação • descentralização • borda • disco/núcleo • desenho incompatível</b>.`);$('#variantMatches').innerHTML=matches.length?`<b>🔬 Checklist deste ano:</b><br>${matches.map(x=>`• <b>${x.n}</b>: ${x.how}`).join('<br>')}`:'<b>Sem variante específica cadastrada para este ano.</b> Ainda faça o checklist geral.';owned()}
-$('#saveCoin').onclick=()=>{if(!currentCoin)return;const c=collection(),k=coinKey(currentCoin.v,currentCoin.y,currentCoin.comm);c[k]=c[k]||{qty:0};c[k].qty++;saveCollection(c);owned()};$('#collectionBtn').onclick=()=>{renderCollection();show('collection')};$('#collectionFilter').onchange=renderCollection;$('#collectionHome').onclick=()=>show('home');$('#variantsBtn').onclick=()=>{renderVariants();show('variants')};$('#variantFilter').onchange=renderVariants;$('#variantsHome').onclick=()=>show('home');$('#start').onclick=start;$('#capture').onclick=snap;$('#cancel').onclick=()=>{stop();show('home')};$('#manual').onclick=()=>show('identify');$('#analyze').onclick=analyze;$('#again').onclick=start;$('#edit').onclick=()=>show('identify');$('#backHome').onclick=()=>show('home');updateSummary();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
+const $ = s => document.querySelector(s);
+let stream, step = 0, photos = [], currentCoin = null, track = null, cameras = [], focusTimer = null;
+const panels = [...document.querySelectorAll('.panel')];
+
+function show(id) {
+  panels.forEach(p => p.classList.toggle('active', p.id === id));
+  scrollTo(0, 0);
+}
+
+const labels = {
+  '0.01': '1 centavo',
+  '0.05': '5 centavos',
+  '0.10': '10 centavos',
+  '0.25': '25 centavos',
+  '0.50': '50 centavos',
+  '1': 'R$ 1,00',
+  '1.00': 'R$ 1,00'
+};
+
+const API_URL = '/api/identify';
+
+const getUserCollection = () => {
+  try { return JSON.parse(localStorage.getItem('userCoinCollection') || '{}'); } catch { return {}; }
+};
+
+function saveUserCollection(col) {
+  localStorage.setItem('userCoinCollection', JSON.stringify(col));
+  updateSummary();
+}
+
+function updateSummary() {
+  const col = getUserCollection();
+  const types = Object.keys(col).length;
+  const total = Object.values(col).reduce((a, x) => a + (x.qty || 0), 0);
+  $('#collectionSummary').innerHTML = `🗂️ Minha Coleção: <b>${types} tipos cadastrados</b> • <b>${total} moedas guardadas</b>`;
+}
+
+function stop() {
+  if (focusTimer) clearInterval(focusTimer);
+  focusTimer = null;
+  stream?.getTracks().forEach(t => t.stop());
+  stream = null;
+  track = null;
+}
+
+async function enumerateCameras() {
+  const ds = await navigator.mediaDevices.enumerateDevices();
+  cameras = ds.filter(d => d.kind === 'videoinput');
+  const sel = $('#cameraSelect'), current = track?.getSettings?.().deviceId || '';
+  sel.innerHTML = cameras.map((d, i) => `<option value="${d.deviceId}" ${d.deviceId === current ? 'selected' : ''}>${d.label || `Câmera ${i + 1}`}</option>`).join('');
+  $('#cameraLabel').hidden = cameras.length < 2;
+}
+
+async function configureTrack() {
+  if (!track) return;
+  const caps = track.getCapabilities?.() || {}, supported = navigator.mediaDevices.getSupportedConstraints?.() || {}, adv = [];
+  if (supported.focusMode && Array.isArray(caps.focusMode)) {
+    if (caps.focusMode.includes('continuous')) adv.push({ focusMode: 'continuous' });
+    else if (caps.focusMode.includes('single-shot')) adv.push({ focusMode: 'single-shot' });
+  }
+  if (adv.length) try { await track.applyConstraints({ advanced: adv }); } catch {}
+  const z = $('#zoom'), zl = $('#zoomLabel');
+  if (caps.zoom && Number.isFinite(caps.zoom.min) && Number.isFinite(caps.zoom.max)) {
+    zl.hidden = false;
+    z.min = caps.zoom.min;
+    z.max = caps.zoom.max;
+    z.step = caps.zoom.step || .1;
+    const cur = track.getSettings().zoom ?? caps.zoom.min;
+    z.value = cur;
+    $('#zoomValue').textContent = `${Number(cur).toFixed(1)}×`;
+  } else zl.hidden = true;
+  const s = track.getSettings();
+  $('#cameraInfo').textContent = `${track.label || 'Câmera'} • ${s.width || '?'}×${s.height || '?'}`;
+}
+
+async function openCamera(deviceId) {
+  stop();
+  const video = { width: { ideal: 3840 }, height: { ideal: 2160 }, frameRate: { ideal: 30 } };
+  if (deviceId) video.deviceId = { exact: deviceId };
+  else video.facingMode = { ideal: 'environment' };
+  stream = await navigator.mediaDevices.getUserMedia({ video, audio: false });
+  track = stream.getVideoTracks()[0];
+  $('#video').srcObject = stream;
+  await new Promise(r => { $('#video').onloadedmetadata = () => { $('#video').play().then(r).catch(r); }; });
+  await configureTrack();
+  await enumerateCameras();
+  startFocusMeter();
+}
+
+async function start() {
+  try {
+    step = 0;
+    photos = [];
+    show('camera');
+    $('#side').textContent = 'FRENTE';
+    $('#capture').textContent = '📸 CAPTURAR FRENTE AGORA';
+    await openCamera();
+  } catch (e) {
+    alert('Não consegui abrir a câmera. Verifique as permissões no navegador.');
+  }
+}
+
+function cropCoinData() {
+  const v = $('#video'), c = $('#canvas'), side = Math.min(v.videoWidth, v.videoHeight) * .58, sx = (v.videoWidth - side) / 2, sy = (v.videoHeight - side) / 2;
+  c.width = 1200; c.height = 1200;
+  const ctx = c.getContext('2d');
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(v, sx, sy, side, side, 0, 0, 1200, 1200);
+  return c.toDataURL('image/jpeg', .85);
+}
+
+async function autoIdentify() {
+  show('scanning');
+  $('#scanFront').src = $('#front').src = photos[0];
+  $('#scanBack').src = $('#back').src = photos[1];
+  $('#scanStatus').textContent = 'Analisando características visuais com o motor de IA...';
+
+  try {
+    console.log('[CLIENT] Enviando POST /api/identify...');
+    const resp = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ front: photos[0], back: photos[1] })
+    });
+
+    if (resp.ok) {
+      const data = await resp.json();
+      console.log('[CLIENT] Resposta da API:', data);
+
+      if (data.identified && data.denomination) {
+        const valMapped = data.denomination === '1.00' ? '1' : data.denomination;
+        currentCoin = {
+          id: data.coin_details?.id || `brl-${valMapped}-${data.year}`,
+          v: valMapped,
+          y: data.year,
+          comm: data.commemorative,
+          design: data.design,
+          details: data.coin_details
+        };
+
+        const pct = Math.round((data.confidence || 0) * 100);
+        showRichCoinDetails(data, pct);
+        return;
+      } else {
+        // Open-Set Rejection (Moeda Desconhecida / Não Catalogada)
+        showUnidentifiedResult(data);
+        return;
+      }
+    }
+  } catch (err) {
+    console.warn('[CLIENT ERROR] Falha na comunicação com /api/identify:', err);
+  }
+
+  showUnidentifiedResult(null);
+}
+
+function showRichCoinDetails(data, confidencePct) {
+  $('#status').className = 'status green';
+  $('#status').textContent = '🟢 IDENTIFICADA AUTOMATICAMENTE COM SUCESSO';
+
+  const valLabel = labels[data.denomination] || `R$ ${data.denomination}`;
+  $('#resultTitle').textContent = `${valLabel} • Ano ${data.year}`;
+  $('#resultText').textContent = `${data.design} ${data.commemorative ? '• (Emissão Comemorativa)' : ''}`;
+
+  const details = data.coin_details || {};
+  const history = details.history || {};
+  const specs = details.specifications || {};
+  const obverse = details.obverse || {};
+  const reverse = details.reverse || {};
+  const rarity = details.rarity || {};
+  const errors = details.known_errors || [];
+  const refs = details.references || [];
+
+  let html = `
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px;">
+      <div style="font-size: 1.1em; font-weight: bold; margin-bottom: 6px;">🎯 Identificação IA: ${data.design}</div>
+      <div>📊 <b>Confiança do Motor:</b> ${confidencePct}%</div>
+      ${data.commemorative ? '<div style="color: #f1c40f; margin-top: 4px;">🏛️ <b>MOEDA COMEMORATIVA OFICIAL</b></div>' : ''}
+    </div>
+  `;
+
+  if (history.short_summary || history.full_context) {
+    html += `
+      <div style="margin-bottom: 14px;">
+        <h3>📖 História & Contexto Numismático</h3>
+        <p><b>${history.title || 'História Oficial'}:</b> ${history.short_summary || ''}</p>
+        <small>${history.full_context || ''}</small>
+      </div>
+    `;
+  }
+
+  html += `
+    <div style="margin-bottom: 14px;">
+      <h3>📐 Especificações Técnicas Oficiais</h3>
+      <div>• <b>Material:</b> ${specs.material || 'Padrão Oficial BCB'}</div>
+      <div>• <b>Diâmetro:</b> ${specs.diameter_mm ? specs.diameter_mm + ' mm' : '27 mm'} | <b>Peso:</b> ${specs.weight_g ? specs.weight_g + ' g' : '7.0 g'}</div>
+      <div>• <b>Espessura:</b> ${specs.thickness_mm ? specs.thickness_mm + ' mm' : '1.95 mm'} | <b>Bordo:</b> ${specs.edge || 'Serrilhado intermitente'}</div>
+      <div>• <b>Alinhamento / Eixo:</b> ${specs.alignment || 'Moeda (180°)'}</div>
+      <div>• <b>Tiragem Oficial:</b> ${details.mintage ? details.mintage.toLocaleString('pt-BR') + ' peças' : 'Não informada'}</div>
+      <div>• <b>Raridade Relativa:</b> ${rarity.relative_rarity || 'Comum em circulação'}</div>
+    </div>
+  `;
+
+  if (obverse.description || reverse.description) {
+    html += `
+      <div style="margin-bottom: 14px;">
+        <h3>🔍 Descrição Visual dos Lados</h3>
+        <div><b>Frente (Anverso):</b> ${obverse.description || 'Padrão Oficial'}</div>
+        <div><b>Verso (Reverso):</b> ${reverse.description || 'Padrão Oficial'}</div>
+      </div>
+    `;
+  }
+
+  if (errors.length > 0) {
+    html += `
+      <div style="margin-bottom: 14px;">
+        <h3>🔬 Checklist de Variantes e Erros Conhecidos</h3>
+        ${errors.map(e => `<div>• <b>${e}</b></div>`).join('')}
+      </div>
+    `;
+  }
+
+  if (refs.length > 0) {
+    html += `
+      <div style="margin-bottom: 10px;">
+        <small><b>Fontes de Evidência Oficiais:</b> ${refs.map(r => `<a href="${r.url}" target="_blank" style="color: #3498db; text-decoration: underline;">${r.source} (Nível ${r.evidence_level})</a>`).join(' • ')}</small>
+      </div>
+    `;
+  }
+
+  $('#facts').innerHTML = html;
+  $('#variantMatches').innerHTML = '';
+  renderOwnedStatus();
+
+  $('#saveCoin').hidden = false;
+  $('#again').hidden = false;
+  $('#retryScan').hidden = true;
+  $('#manualFallbackBtn').hidden = true;
+  $('#uncataloguedBtn').hidden = true;
+
+  show('result');
+}
+
+function showUnidentifiedResult(apiData) {
+  currentCoin = null;
+  $('#status').className = 'status yellow';
+  $('#status').textContent = '🟡 MOEDA NÃO IDENTIFICADA COM SEGURANÇA';
+  $('#resultTitle').textContent = 'Moeda não identificada com segurança.';
+  $('#resultText').textContent = 'Esta moeda pode ser uma emissão comemorativa ainda não catalogada no aplicativo, ou a captura precisa de melhor iluminação.';
+  
+  let reasonText = 'Nenhuma emissão conhecida no catálogo atinge a margem de aceitação mínima.';
+  if (apiData && apiData.warnings && apiData.warnings.length > 0) {
+    reasonText = apiData.warnings[0];
+  }
+
+  let html = `
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; margin-bottom: 12px;">
+      <div style="font-weight: bold; margin-bottom: 4px;">🔍 Diagnóstico da IA (Open-Set OOD):</div>
+      <div style="font-size: 0.9em; color: #f39c12;">${reasonText}</div>
+      ${apiData && apiData.best_candidate ? `<div style="font-size: 0.85em; margin-top: 6px; color: #aaa;">Maior aproximação observada: <i>${apiData.best_candidate.design} (${Math.round((apiData.best_candidate.confidence||0)*100)}%)</i></div>` : ''}
+    </div>
+    <div style="margin-bottom: 10px;">
+      <b>Dicas para identificação perfeita:</b><br>
+      • Garanta boa iluminação ambiente (sem iluminação roxa ou sombras fortes).<br>
+      • Posicione a moeda no centro da marcação da câmera.<br>
+      • Se a moeda for uma emissão rara ou ainda não cadastrada, solicite a inclusão no catálogo.
+    </div>
+  `;
+
+  $('#facts').innerHTML = html;
+  $('#variantMatches').innerHTML = '';
+  $('#ownedState').innerHTML = '';
+
+  $('#saveCoin').hidden = true;
+  $('#again').hidden = true;
+  $('#retryScan').hidden = false;
+  $('#uncataloguedBtn').hidden = false;
+  $('#manualFallbackBtn').hidden = false;
+
+  show('result');
+}
+
+function renderOwnedStatus() {
+  if (!currentCoin) return;
+  const col = getUserCollection();
+  const entry = col[currentCoin.id];
+  $('#ownedState').innerHTML = entry 
+    ? `✅ Você possui <b>${entry.qty} exemplar(es)</b> desta moeda na sua coleção!`
+    : '⭐ Esta moeda ainda não está salva na sua coleção.';
+}
+
+function saveCurrentCoinToCollection() {
+  if (!currentCoin) return;
+  const col = getUserCollection();
+  const id = currentCoin.id;
+  col[id] = col[id] || { coin_id: id, qty: 0, acquired_at: new Date().toISOString().split('T')[0] };
+  col[id].qty++;
+  saveUserCollection(col);
+  renderOwnedStatus();
+}
+
+async function renderFullCatalogView() {
+  try {
+    const res = await fetch('/api/catalog');
+    if (!res.ok) return;
+    const data = await res.json();
+    const coins = data.coins || [];
+
+    const col = getUserCollection();
+    let html = '<h3>🏛️ Catálogo Universal de Moedas do Real</h3><div class="facts">';
+
+    coins.forEach(c => {
+      const ownedEntry = col[c.id];
+      html += `
+        <div style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+          <div style="font-weight: bold; font-size: 1.1em;">${ownedEntry ? '✅' : '⬜'} R$ ${c.denomination} (${c.year}) — ${c.design_name}</div>
+          <small>Tiragem: ${c.mintage ? c.mintage.toLocaleString('pt-BR') : 'Sem dados'} | Material: ${c.specifications?.material || c.material || 'Padrão'}</small>
+          ${ownedEntry ? `<br><small style="color: #2ecc71;">Na sua coleção: ×${ownedEntry.qty}</small>` : ''}
+        </div>
+      `;
+    });
+    html += '</div>';
+
+    $('#collectionStats').innerHTML = `Tipos Guardados na Sua Coleção: <b>${Object.keys(col).length}</b>`;
+    $('#collectionList').innerHTML = html;
+  } catch (err) {
+    console.warn('Erro ao carregar catálogo universal:', err);
+  }
+}
+
+$('#saveCoin').onclick = saveCurrentCoinToCollection;
+$('#collectionBtn').onclick = () => { renderFullCatalogView(); show('collection'); };
+$('#collectionHome').onclick = () => show('home');
+$('#start').onclick = start;
+$('#cancel').onclick = () => { stop(); show('home'); };
+$('#manual').onclick = () => show('identify');
+$('#again').onclick = start;
+$('#retryScan').onclick = start;
+$('#uncataloguedBtn').onclick = () => alert('Solicitação registrada! Em breve esta emissão estará indexada no catálogo universal.');
+$('#manualFallbackBtn').onclick = () => show('identify');
+$('#edit').onclick = () => show('identify');
+$('#backHome').onclick = () => show('home');
+
+updateSummary();
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');

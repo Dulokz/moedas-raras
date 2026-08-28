@@ -1,0 +1,55 @@
+{
+  "version": "3.0",
+  "description": "Registro de Erros de Cunhagem Documentados — Moedas Raras",
+  "errors": [
+    {
+      "id": "error-brl-0.50-2012-mula",
+      "issue_id": "issue-brl-0.50-2024-regular",
+      "error_type": "mula",
+      "name": "Moeda Mula de R$ 0,50 2012 (Sem Barão do Rio Branco)",
+      "description": "Cunhada equivocadamente usando o anverso da moeda de 5 centavos (com a Efígie da República) no lugar do anverso oficial de 50 centavos (com o Barão do Rio Branco).",
+      "diagnostic_features": [
+        "Anverso exibe a Efígie da República (padrão de 5 centavos)",
+        "Reverso exibe o valor nominal 50 CENTAVOS e ano 2012",
+        "Bordo grosso típico de 50 centavos com a inscrição ORDEM E PROGRESSO"
+      ],
+      "known_frequency": "very_rare",
+      "evidence_status": "verified_secondary",
+      "sources": [
+        { "source_id": "catalogo-amigo-erros", "supports": ["description", "diagnostic_features"] },
+        { "source_id": "catalogo-bentes", "supports": ["error_type", "known_frequency"] }
+      ]
+    },
+    {
+      "id": "error-brl-1-reverso-invertido",
+      "issue_id": "issue-brl-1-2024-regular",
+      "error_type": "reverso_invertido",
+      "name": "R$ 1,00 com Reverso Invertido (180°)",
+      "description": "Giro do eixo em 180° em relação ao padrão oficial. Ao girar a moeda no eixo vertical, o reverso aparece de cabeça para baixo.",
+      "diagnostic_features": [
+        "Deslocamento de rotação de exatamente 180° entre anverso e reverso"
+      ],
+      "known_frequency": "rare",
+      "evidence_status": "verified_secondary",
+      "sources": [
+        { "source_id": "catalogo-amigo-erros", "supports": ["description"] }
+      ]
+    },
+    {
+      "id": "error-brl-1-nucleo-deslocado",
+      "issue_id": "issue-brl-1-2024-regular",
+      "error_type": "nucleo_deslocado",
+      "name": "R$ 1,00 com Núcleo Deslocado / Vazado (Efeito 'Ovo Frito')",
+      "description": "Defeito de acoplamento em que o núcleo dourado de aço revestido de bronze é prensado fora de centro em relação ao anel de aço inoxidável.",
+      "diagnostic_features": [
+        "Núcleo dourado avança visivelmente sobre o anel prateado",
+        "Fresta ou formato ovalizado na junção dos dois metais"
+      ],
+      "known_frequency": "very_rare",
+      "evidence_status": "verified_secondary",
+      "sources": [
+        { "source_id": "catalogo-amigo-erros", "supports": ["description", "diagnostic_features"] }
+      ]
+    }
+  ]
+}

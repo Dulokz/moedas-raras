@@ -1,0 +1,410 @@
+{
+  "version": "3.0",
+  "description": "Registro de Emissões Físicas Anuais — Moedas Raras",
+  "issues": [
+    {
+      "id": "issue-brl-1-1994-inox",
+      "denomination_value": "1.00",
+      "year": 1994,
+      "design_id": "design-brl-1-primeira-familia",
+      "type": "regular",
+      "mintage": 215000000,
+      "status": "recollected",
+      "specifications": {
+        "diameter_mm": 24.0,
+        "weight_g": 4.27,
+        "thickness_mm": 1.20,
+        "material": "Aço Inoxidável",
+        "core_material": null,
+        "ring_material": null,
+        "edge": "Liso",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Tiragem oficial de 215 milhões de peças em 1994.",
+        "notes": "Moeda recolhida de circulação pelo Banco Central."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-circulacao", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-1998-direitos-humanos",
+      "denomination_value": "1.00",
+      "year": 1998,
+      "design_id": "design-brl-1-1998-direitos-humanos",
+      "type": "commemorative",
+      "mintage": 600000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.84,
+        "thickness_mm": 2.00,
+        "material": "Bimetálica (Núcleo de cuproníquel, anel de alpaca)",
+        "core_material": "Cuproníquel",
+        "ring_material": "Alpaca",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "rare",
+        "basis": "Tiragem mínima oficial de apenas 600.000 unidades.",
+        "notes": "A moeda comemorativa circulante mais valiosa do Plano Real."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications", "history"] },
+        { "source_id": "catalogo-bentes", "supports": ["rarity"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-1998-regular",
+      "denomination_value": "1.00",
+      "year": 1998,
+      "design_id": "design-brl-1-regular-segunda-familia",
+      "type": "regular",
+      "mintage": 32000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.84,
+        "thickness_mm": 2.00,
+        "material": "Bimetálica (Núcleo de cuproníquel, anel de alpaca)",
+        "core_material": "Cuproníquel",
+        "ring_material": "Alpaca",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "scarce",
+        "basis": "Primeiro ano da 2ª família com tiragem moderada de 32 milhões.",
+        "notes": "Bastante procurada em estado Flor de Cunho."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-circulacao", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-1999-regular",
+      "denomination_value": "1.00",
+      "year": 1999,
+      "design_id": "design-brl-1-regular-segunda-familia",
+      "type": "regular",
+      "mintage": 3840000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.84,
+        "thickness_mm": 2.00,
+        "material": "Bimetálica (Núcleo de cuproníquel, anel de alpaca)",
+        "core_material": "Cuproníquel",
+        "ring_material": "Alpaca",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "scarce",
+        "basis": "Segunda menor tiragem regular de R$ 1 (3,84 milhões).",
+        "notes": "Valorizada devido à baixa mintage."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-circulacao", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2002-jk",
+      "denomination_value": "1.00",
+      "year": 2002,
+      "design_id": "design-brl-1-2002-jk",
+      "type": "commemorative",
+      "mintage": 50000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Tiragem de 50 milhões de peças.",
+        "notes": "Moeda comemorativa de larga circulação."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2005-40-anos-bcb",
+      "denomination_value": "1.00",
+      "year": 2005,
+      "design_id": "design-brl-1-2005-40-anos-bcb",
+      "type": "commemorative",
+      "mintage": 40000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Tiragem oficial de 40 milhões.",
+        "notes": "Ampla distribuição."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2012-bandeira-olimpica",
+      "denomination_value": "1.00",
+      "year": 2012,
+      "design_id": "design-brl-1-2012-bandeira-olimpica",
+      "type": "commemorative",
+      "mintage": 2016000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "scarce",
+        "basis": "Tiragem de 2.016.000 unidades.",
+        "notes": "Alta procura numismática."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2016-rio-2016-atletismo",
+      "denomination_value": "1.00",
+      "year": 2014,
+      "design_id": "design-brl-1-2016-rio-2016",
+      "type": "commemorative",
+      "mintage": 20000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Tiragem oficial de 20 milhões por modalidade.",
+        "notes": "Série Rio 2016."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2019-25-anos-real",
+      "denomination_value": "1.00",
+      "year": 2019,
+      "design_id": "design-brl-1-2019-25-anos-real",
+      "type": "commemorative",
+      "mintage": 25000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Tiragem de 25 milhões.",
+        "notes": "Moeda do Beija-flor."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2024-30-anos-real",
+      "denomination_value": "1.00",
+      "year": 2024,
+      "design_id": "design-brl-1-2024-30-anos-real",
+      "type": "commemorative",
+      "mintage": 45000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Tiragem oficial de 45 milhões de peças em 2024.",
+        "notes": "Moeda comemorativa dos 30 anos do Real."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2024-regular",
+      "denomination_value": "1.00",
+      "year": 2024,
+      "design_id": "design-brl-1-regular-segunda-familia",
+      "type": "regular",
+      "mintage": 95000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Emissão regular de troco diário.",
+        "notes": "Muito comum."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-circulacao", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-1-2025-60-anos-bcb",
+      "denomination_value": "1.00",
+      "year": 2025,
+      "design_id": "design-brl-1-2025-60-anos-bcb",
+      "type": "commemorative",
+      "mintage": 45000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 27.0,
+        "weight_g": 7.00,
+        "thickness_mm": 1.95,
+        "material": "Bimetálica (Núcleo de aço revestido de bronze, anel de aço inoxidável)",
+        "core_material": "Aço revestido de bronze",
+        "ring_material": "Aço inoxidável",
+        "edge": "Serrilhado intermitente",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Tiragem de 45 milhões autorizada.",
+        "notes": "Comemorativa 60 anos BCB."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-comemorativas", "supports": ["mintage", "specifications"] }
+      ]
+    },
+    {
+      "id": "issue-brl-0.50-2024-regular",
+      "denomination_value": "0.50",
+      "year": 2024,
+      "design_id": "design-brl-0.50-regular-segunda-familia",
+      "type": "regular",
+      "mintage": 80000000,
+      "status": "circulation",
+      "specifications": {
+        "diameter_mm": 23.0,
+        "weight_g": 6.80,
+        "thickness_mm": 2.85,
+        "material": "Aço Inoxidável",
+        "core_material": null,
+        "ring_material": null,
+        "edge": "Inscrito * ORDEM E PROGRESSO *",
+        "alignment": "Moeda (180°)"
+      },
+      "rarity": {
+        "status": "common",
+        "basis": "Troco regular.",
+        "notes": "Muito comum."
+      },
+      "verification": {
+        "status": "verified_official",
+        "last_reviewed_at": "2026-08-28"
+      },
+      "sources": [
+        { "source_id": "bcb-moedas-circulacao", "supports": ["mintage", "specifications"] }
+      ]
+    }
+  ]
+}

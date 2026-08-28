@@ -1,0 +1,96 @@
+{
+  "version": "3.0",
+  "description": "Registro Central de Fontes e Níveis de Evidência Numismática — Moedas Raras",
+  "sources": [
+    {
+      "id": "bcb-moedas-comemorativas",
+      "name": "Banco Central do Brasil — Moedas Comemorativas",
+      "level": "A",
+      "type": "official",
+      "url": "https://www.bcb.gov.br/cedulasemoedas/moedascomemorativas",
+      "accessed_at": "2026-08-28",
+      "notes": "Fonte primária oficial oficial para edições comemorativas, especificações físicas e tiragens."
+    },
+    {
+      "id": "bcb-moedas-circulacao",
+      "name": "Banco Central do Brasil — Moedas em Circulação",
+      "level": "A",
+      "type": "official",
+      "url": "https://www.bcb.gov.br/cedulasemoedas/moedasemitidas",
+      "accessed_at": "2026-08-28",
+      "notes": "Fonte primária oficial para padrão das 1ª e 2ª famílias e tiragens anuais."
+    },
+    {
+      "id": "casa-da-moeda",
+      "name": "Casa da Moeda do Brasil (CMB)",
+      "level": "A",
+      "type": "official",
+      "url": "https://www.casadamoeda.gov.br/",
+      "accessed_at": "2026-08-28",
+      "notes": "Órgão fabricante oficial de moedas do Brasil."
+    },
+    {
+      "id": "museu-valores-bcb",
+      "name": "Museu de Valores do Banco Central",
+      "level": "A",
+      "type": "official",
+      "url": "https://www.bcb.gov.br/acessoinformacao/museudevalores",
+      "accessed_at": "2026-08-28",
+      "notes": "Acervo histórico e numismático oficial."
+    },
+    {
+      "id": "numista-brl",
+      "name": "Numista — Catálogo Numismático Internacional",
+      "level": "B",
+      "type": "catalog",
+      "url": "https://pt.numista.com/catalogue/bresil-21.html",
+      "accessed_at": "2026-08-28",
+      "notes": "Catálogo numismático internacional com numeração de tipos e variantes."
+    },
+    {
+      "id": "crmb-moedas-do-brasil",
+      "name": "Moedas do Brasil (CRMB)",
+      "level": "B",
+      "type": "catalog",
+      "url": "https://www.moedasdobrasil.com.br/",
+      "accessed_at": "2026-08-28",
+      "notes": "Referência numismática nacional para catálogo de séries do Real."
+    },
+    {
+      "id": "catalogo-bentes",
+      "name": "Catálogo Bentes de Moedas do Brasil",
+      "level": "B",
+      "type": "catalog",
+      "url": "https://bentes.com/",
+      "accessed_at": "2026-08-28",
+      "notes": "Referência técnica de cunhos, variantes e graus de raridade."
+    },
+    {
+      "id": "catalogo-amato-neves",
+      "name": "Catálogo Moedas do Brasil (Amato, Neves & Russo)",
+      "level": "B",
+      "type": "catalog",
+      "url": "https://amatonumismatica.com.br/",
+      "accessed_at": "2026-08-28",
+      "notes": "Catálogo clássico nacional de numismática brasileira."
+    },
+    {
+      "id": "catalogo-amigo-erros",
+      "name": "Catálogo Moedas do Real: Erros e Variantes",
+      "level": "B",
+      "type": "catalog",
+      "url": "https://www.catalogoamigo.com/",
+      "accessed_at": "2026-08-28",
+      "notes": "Referência especializada para erros de cunhagem e anomalias."
+    },
+    {
+      "id": "numismatica-castro",
+      "name": "Numismática Castro",
+      "level": "C",
+      "type": "market",
+      "url": "https://www.numismaticacastro.com.br/",
+      "accessed_at": "2026-08-28",
+      "notes": "Casa leiloeira e loja numismática especializada."
+    }
+  ]
+}
