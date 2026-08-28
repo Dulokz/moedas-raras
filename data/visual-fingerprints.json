@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "method": "dhash-16x16-rotation-bank",
+  "note": "Fingerprints are derived from real user-supplied coin photographs. They are visual references, not OCR strings.",
+  "references": [
+    {
+      "id": "brl-1-2024-30-anos-real",
+      "denomination": "1",
+      "year": "2024",
+      "type": "commemorative",
+      "name": "30 anos do Real",
+      "source": "user-test-photo-2026-08-27",
+      "sides": [
+        {"name":"commemorative-obverse","hashes":["5883509332c97249703952195a1928139603cc466419b8a0cf0dd1711702e040","0f1063d4f0d5ca6503b566d1673227b2ed12b5529677f8a5e3652cc54b87ae4f","f4f89f1271704f0cfae267d99d4c3f9637eb67a567b563f16db16cb136f53e65","098a162d5ccb59305ae01196b542b748b20bb3197419523e59a454f09439b30f"]},
+        {"name":"standard-reverse-2024","hashes":["18463023223362290e9952994b19411b2513b606db2c6078b804de07d21170c8","cda50fa978ebf6328692279b3c9a76586e5811980eb98cd9cfb17e6010c8a731","c87167341f84dfe261f9cb249f92375b276d672d66b5668f6a3933393af39de7","731aec63f980720c64ce628fe673e589e501a6c3261bb61e339028c168075a4c"]}
+      ]
+    }
+  ]
+}
